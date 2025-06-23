@@ -1,0 +1,282 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|c:\\users\\rapho\\onedrive\\desktop\\part-1-poe-raphotoofentse\\eventeasedb\\views\\event\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|solutionrelative:views\\event\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\views\\event\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|solutionrelative:views\\event\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\controllers\\eventtypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|solutionrelative:controllers\\eventtypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\controllers\\venuecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|solutionrelative:controllers\\venuecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|solutionrelative:controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\views\\event\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|solutionrelative:views\\event\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\views\\venue\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|solutionrelative:views\\venue\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|solutionrelative:models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\views\\venue\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|solutionrelative:views\\venue\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\models\\eventtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|solutionrelative:models\\eventtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\models\\eventeasedbconsole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|solutionrelative:models\\eventeasedbconsole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|solutionrelative:controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\views\\booking\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|solutionrelative:views\\booking\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|solutionrelative:web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|solutionrelative:models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\views\\booking\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F717B614-F08B-4B17-8D86-839FD99381C6}|EventEaseDB.csproj|solutionrelative:views\\booking\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 100,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Views\\Event\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Event\\Create.cshtml",
+              "ToolTip": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Views\\Event\\Create.cshtml",
+              "RelativeToolTip": "Views\\Event\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-23T17:28:43.938Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Views\\Venue\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Venue\\Create.cshtml",
+              "ToolTip": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Views\\Venue\\Create.cshtml",
+              "RelativeToolTip": "Views\\Venue\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-23T17:22:26.05Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Views\\Event\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Event\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Views\\Event\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Event\\Edit.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-23T17:10:26.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "EventEaseDBConsole.cs",
+              "DocumentMoniker": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Models\\EventEaseDBConsole.cs",
+              "RelativeDocumentMoniker": "Models\\EventEaseDBConsole.cs",
+              "ToolTip": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Models\\EventEaseDBConsole.cs",
+              "RelativeToolTip": "Models\\EventEaseDBConsole.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T17:08:03.467Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EventTypeController.cs",
+              "DocumentMoniker": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Controllers\\EventTypeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EventTypeController.cs",
+              "ToolTip": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Controllers\\EventTypeController.cs",
+              "RelativeToolTip": "Controllers\\EventTypeController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAYwCkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T17:05:22.863Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "EventType.cs",
+              "DocumentMoniker": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Models\\EventType.cs",
+              "RelativeDocumentMoniker": "Models\\EventType.cs",
+              "ToolTip": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Models\\EventType.cs",
+              "RelativeToolTip": "Models\\EventType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T17:04:27.163Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Views\\Venue\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Venue\\Index.cshtml",
+              "ToolTip": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Views\\Venue\\Index.cshtml",
+              "RelativeToolTip": "Views\\Venue\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-23T13:30:16.91Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Views\\Event\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Event\\Index.cshtml",
+              "ToolTip": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Views\\Event\\Index.cshtml",
+              "RelativeToolTip": "Views\\Event\\Index.cshtml",
+              "ViewState": "AgIAAB8AAAAAAAAAAADwvzgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-23T13:29:59.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EventController.cs",
+              "DocumentMoniker": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Controllers\\EventController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EventController.cs",
+              "ToolTip": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Controllers\\EventController.cs",
+              "RelativeToolTip": "Controllers\\EventController.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAgwC8AAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T13:26:06.425Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "VenueController.cs",
+              "DocumentMoniker": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Controllers\\VenueController.cs",
+              "RelativeDocumentMoniker": "Controllers\\VenueController.cs",
+              "ToolTip": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Controllers\\VenueController.cs",
+              "RelativeToolTip": "Controllers\\VenueController.cs",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAwwDQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T13:24:34.643Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BookingController.cs",
+              "DocumentMoniker": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Controllers\\BookingController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BookingController.cs",
+              "ToolTip": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Controllers\\BookingController.cs",
+              "RelativeToolTip": "Controllers\\BookingController.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAgwG4AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T12:47:25.898Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Web.config",
+              "RelativeDocumentMoniker": "Web.config",
+              "ToolTip": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Web.config",
+              "RelativeToolTip": "Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAACjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-06-23T12:16:06.982Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Event.cs",
+              "DocumentMoniker": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Models\\Event.cs",
+              "RelativeDocumentMoniker": "Models\\Event.cs",
+              "ToolTip": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Models\\Event.cs",
+              "RelativeToolTip": "Models\\Event.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T11:43:43.303Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Views\\Booking\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Booking\\Create.cshtml",
+              "ToolTip": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Views\\Booking\\Create.cshtml",
+              "RelativeToolTip": "Views\\Booking\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-23T11:40:12.857Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Views\\Booking\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Booking\\Index.cshtml",
+              "ToolTip": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Views\\Booking\\Index.cshtml",
+              "RelativeToolTip": "Views\\Booking\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-23T11:39:17.236Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Booking.cs",
+              "DocumentMoniker": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Models\\Booking.cs",
+              "RelativeDocumentMoniker": "Models\\Booking.cs",
+              "ToolTip": "C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\Models\\Booking.cs",
+              "RelativeToolTip": "Models\\Booking.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T11:35:49.912Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

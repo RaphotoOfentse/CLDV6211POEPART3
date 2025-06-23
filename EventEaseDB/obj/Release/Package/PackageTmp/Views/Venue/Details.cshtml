@@ -1,0 +1,56 @@
+﻿@model EventEaseDB.Models.Venue
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Venue</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VenueName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VenueName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Capacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Capacity)
+        </dd>
+        <!--STEP 7: REPLACE IMAGEURL TEXT DISPLAY WITH REAL IMAGE-->
+        <dt>
+            Venue Image
+        </dt>
+        <dd>
+            @if (!string.IsNullOrEmpty(Model.ImageURL))
+            {
+                <img src="@Model.ImageURL" alt="Venue Image" width="200" height="200" 
+                style = "object-fit: cover; border-radius: 8px; border: 1px solid #ccc;" />
+            }
+            else
+            {
+                <span>No Image Available</span>
+            }
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VenueID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

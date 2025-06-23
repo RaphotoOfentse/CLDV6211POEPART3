@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="EventEaseDBConsole-Web.config Connection String" description="EventEaseDBConsole Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:serverapp01.database.windows.net,1433;Initial Catalog=EventEase-db;Persist Security Info=False;User ID=Pabatso;Password=NewB@2024;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\rapho\\OneDrive\\Desktop\\part-1-poe-RaphotoOfentse\\EventEaseDB\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='EventEaseDBConsole']/@connectionString" />
+  </parameter>
+</parameters>
