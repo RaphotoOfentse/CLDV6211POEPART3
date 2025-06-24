@@ -24,13 +24,20 @@ namespace EventEaseDB
     url: "Venue/Delete/{id}",
     defaults: new { controller = "Venue", action = "Delete", id = UrlParameter.Optional }
 );
-
+            /*
             // Default route, handles all controllers and actions
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Venue", action = "Index", id = UrlParameter.Optional }
             );
+            */
+            routes.MapRoute(
+  name: "Default",
+  url: "{controller}/{action}/{id}",
+  defaults: new { controller = "Event", action = "Index", id = UrlParameter.Optional }
+);
+
 
 
         }

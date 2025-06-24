@@ -21,8 +21,6 @@ namespace EventEaseDB.Models
         public DateTime Date { get; set; }
 
         public string Description { get; set; }
-
-        public string ImageURL { get; set; }
         public int? EventTypeID { get; set; }
         public virtual Venue Venue { get; set; }
         public virtual EventType EventType { get; set; } // ? For showing event type

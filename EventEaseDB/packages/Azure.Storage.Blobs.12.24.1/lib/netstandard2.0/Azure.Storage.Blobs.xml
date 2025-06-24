@@ -21580,6 +21580,12 @@
             has immutable storage with versioning enabled.
             </summary>
         </member>
+        <member name="P:Azure.Storage.Blobs.Models.PageBlobCreateOptions.PremiumPageBlobAccessTier">
+            <summary>
+            Optional.  Sets the page blob tiers on the blob.
+            This is only supported for page blobs on premium accounts.
+            </summary>
+        </member>
         <member name="T:Azure.Storage.Blobs.Models.PageBlobInfo">
             <summary>
             PageBlobInfo.
@@ -24658,6 +24664,246 @@
             Builds up the UserDelegationKey portion of the SAS query parameter string.
             </summary>
         </member>
+        <member name="T:Azure.Storage.Shared.AesGcm.AesGcmWindows">
+             <summary>
+             Taken from
+             https://github.com/dotnet/runtime/blob/main/src/libraries/System.Security.Cryptography/src/System/Security/Cryptography/AeadCommon.Windows.cs
+            
+             SHOULD NOT BE CHANGED WITHOUT COORDINATING WITH BCL TEAM
+             </summary>
+        </member>
+        <member name="T:Azure.Storage.Shared.AesGcm.AeadCommon">
+             <summary>
+             Taken from
+             https://github.com/dotnet/runtime/blob/main/src/libraries/System.Security.Cryptography/src/System/Security/Cryptography/AeadCommon.Windows.cs
+            
+             SHOULD NOT BE CHANGED WITHOUT COORDINATING WITH BCL TEAM
+             </summary>
+        </member>
+        <member name="T:Azure.Storage.Shared.AesGcm.Interop">
+             <summary>
+             From
+             https://github.com/dotnet/runtime/blob/main/src/libraries/Common/src/Interop/Windows/BCrypt/Interop.BCryptEncryptDecrypt.cs
+            
+             SHOULD NOT BE CHANGED WITHOUT COORDINATING WITH BCL TEAM
+             </summary>
+             <summary>
+             Taken from
+             https://github.com/dotnet/runtime/blob/main/src/libraries/Common/src/Interop/Windows/BCrypt/Interop.BCryptImportKey.cs
+            
+             SHOULD NOT BE CHANGED WITHOUT COORDINATING WITH BCL TEAM
+             </summary>
+             <summary>
+             Taken from
+             https://github.com/dotnet/runtime/blob/57bfe474518ab5b7cfe6bf7424a79ce3af9d6657/src/libraries/Common/src/Interop/Windows/BCrypt/Interop.Blobs.cs#L302
+            
+             SHOULD NOT BE CHANGED WITHOUT COORDINATING WITH BCL TEAM
+             </summary>
+             <summary>
+             From
+             https://github.com/dotnet/runtime/blob/57bfe474518ab5b7cfe6bf7424a79ce3af9d6657/src/libraries/Common/src/Interop/Windows/BCrypt/BCryptAeadHandleCache.cs
+            
+             SHOULD NOT BE CHANGED WITHOUT COORDINATING WITH BCL TEAM
+             </summary>
+             <summary>
+             Taken from
+             https://github.com/dotnet/runtime/blob/main/src/libraries/Common/src/Interop/Windows/BCrypt/Interop.CreateCryptographicException.cs
+            
+             SHOULD NOT BE CHANGED WITHOUT COORDINATING WITH BCL TEAM
+             </summary>
+             <summary>
+             From
+             https://github.com/dotnet/runtime/blob/main/src/libraries/Common/src/Interop/Windows/BCrypt/Interop.NTSTATUS.cs
+            
+             SHOULD NOT BE CHANGED WITHOUT COORDINATING WITH BCL TEAM
+             </summary>
+             <summary>
+             From
+             https://github.com/dotnet/runtime/blob/main/src/libraries/Common/src/Interop/Windows/BCrypt/Cng.cs#L152
+            
+             SHOULD NOT BE CHANGED WITHOUT COORDINATING WITH BCL TEAM
+             </summary>
+        </member>
+        <member name="M:Azure.Storage.Shared.AesGcm.Interop.BCrypt.CreateCryptographicException(Azure.Storage.Shared.AesGcm.Interop.BCrypt.NTSTATUS)">
+            <param name="ntstatus"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Azure.Storage.Shared.AesGcm.Interop.BCrypt.SafeAlgorithmHandle">
+             <summary>
+             From
+             https://github.com/dotnet/runtime/blob/main/src/libraries/Common/src/Interop/Windows/BCrypt/Cng.cs#L140
+            
+             SHOULD NOT BE CHANGED WITHOUT COORDINATING WITH BCL TEAM
+             </summary>
+        </member>
+        <member name="T:Azure.Storage.Shared.AesGcm.KeySizeHelpers">
+             <summary>
+             Taken from
+             https://github.com/dotnet/runtime/blob/main/src/libraries/Common/src/System/Security/Cryptography/KeySizeHelpers.cs
+            
+             SHOULD NOT BE CHANGED WITHOUT COORDINATING WITH BCL TEAM
+             </summary>
+        </member>
+        <member name="T:Azure.Storage.Shared.AesGcm.SafeBCryptHandle">
+             <summary>
+             From
+             https://github.com/dotnet/runtime/blob/main/src/libraries/Common/src/Microsoft/Win32/SafeHandles/SafeBCryptHandle.cs
+            
+             SHOULD NOT BE CHANGED WITHOUT COORDINATING WITH BCL TEAM
+             </summary>
+        </member>
+        <member name="T:Azure.Storage.Shared.PooledMemoryStream">
+            <summary>
+            Functions like a readable <see cref="T:System.IO.MemoryStream" /> but uses an ArrayPool to supply the backing memory.
+            This stream support buffering long sizes.
+            </summary>
+        </member>
+        <member name="P:Azure.Storage.Shared.PooledMemoryStream.MaxArraySize">
+            <summary>
+            Size to rent from MemoryPool.
+            </summary>
+        </member>
+        <member name="P:Azure.Storage.Shared.PooledMemoryStream.ArrayPool">
+            <summary>
+            The backing array pool.
+            </summary>
+        </member>
+        <member name="M:Azure.Storage.Shared.PooledMemoryStream.#ctor">
+            <summary>
+            Parameterless constructor for mocking.
+            </summary>
+        </member>
+        <member name="M:Azure.Storage.Shared.PooledMemoryStream.BufferStreamPartitionInternal(System.IO.Stream,System.Int64,System.Int64,System.Buffers.ArrayPool{System.Byte},System.Nullable{System.Int32},System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Buffers a portion of the given stream, starting at its current position,
+            returning the buffered stream partition. The provided stream position will
+            be incremented by the amount of bytes buffered.
+            </summary>
+            <param name="stream">
+            Stream to buffer from.
+            </param>
+            <param name="minCount">
+            Minimum number of bytes to buffer. This method will not return until at
+            least this many bytes have been read from <paramref name="stream" /> or the
+            stream completes.
+            </param>
+            <param name="maxCount">
+            Maximum number of bytes to buffer.
+            </param>
+            <param name="arrayPool">
+            Pool to rent buffer space from.
+            </param>
+            <param name="maxArrayPoolRentalSize">
+            Max size we can request from the array pool.
+            </param>
+            <param name="async">
+            Whether to perform this operation asynchronously.
+            </param>
+            <param name="cancellationToken">
+            Cancellation token.
+            </param>
+            <returns>
+            The buffered stream partition with memory backed by an array pool.
+            </returns>
+        </member>
+        <member name="T:Azure.Storage.Shared.StorageClientConfiguration">
+            <summary>
+            Parent class of the *ClientConfiguration classes.
+            Contains common properties used to create clients.
+            </summary>
+        </member>
+        <member name="M:Azure.Storage.Shared.StorageClientConfiguration.#ctor(Azure.Core.Pipeline.HttpPipeline,Azure.Storage.StorageSharedKeyCredential,Azure.Core.Pipeline.ClientDiagnostics)">
+            <summary>
+            Create a <see cref="T:Azure.Storage.Shared.StorageClientConfiguration" /> with shared key authentication.
+            </summary>
+        </member>
+        <member name="M:Azure.Storage.Shared.StorageClientConfiguration.#ctor(Azure.Core.Pipeline.HttpPipeline,Azure.AzureSasCredential,Azure.Core.Pipeline.ClientDiagnostics)">
+            <summary>
+            Create a <see cref="T:Azure.Storage.Shared.StorageClientConfiguration" /> with SAS authentication.
+            </summary>
+        </member>
+        <member name="M:Azure.Storage.Shared.StorageClientConfiguration.#ctor(Azure.Core.Pipeline.HttpPipeline,Azure.Core.TokenCredential,Azure.Core.Pipeline.ClientDiagnostics)">
+            <summary>
+            Create a <see cref="T:Azure.Storage.Shared.StorageClientConfiguration" /> with token authentication.
+            </summary>
+        </member>
+        <member name="M:Azure.Storage.Shared.StorageClientConfiguration.#ctor(Azure.Core.Pipeline.HttpPipeline,Azure.Storage.StorageSharedKeyCredential,Azure.AzureSasCredential,Azure.Core.TokenCredential,Azure.Core.Pipeline.ClientDiagnostics)">
+            <summary>
+            Only use for creating a deep copy of a <see cref="T:Azure.Storage.Shared.StorageClientConfiguration" />.
+            </summary>
+        </member>
+        <member name="M:Azure.Storage.Shared.StorageClientConfiguration.#ctor(Azure.Core.Pipeline.HttpPipeline,Azure.Core.Pipeline.ClientDiagnostics)">
+            <summary>
+            Create a <see cref="T:Azure.Storage.Shared.StorageClientConfiguration" /> without authentication,
+            or with SAS that was provided as part of the URL.
+            </summary>
+        </member>
+        <member name="M:Azure.Storage.Shared.StorageClientConfiguration.#ctor">
+            <summary>
+            Constructor for mocking.
+            </summary>
+        </member>
+        <member name="M:Azure.Storage.Shared.StorageExtensions.EscapePath(System.String,System.Boolean)">
+            <param name="path">Path to operate on.</param>
+            <param name="trimOuterSlashes">Whether to perform backwards-compatible trimming.</param>
+        </member>
+        <member name="M:Azure.Storage.Shared.StorageExtensions.UnescapePath(System.String,System.Boolean)">
+            <param name="path">Path to operate on.</param>
+            <param name="trimOuterSlashes">Whether to perform backwards-compatible trimming.</param>
+        </member>
+        <member name="M:Azure.Storage.Shared.StorageExtensions.CreateClientSideEncryptionScope(Azure.Storage.ClientSideEncryptionVersion)">
+            <summary>
+            Temporary use of pipeline scopes for triggering use of AzFeatures flag.
+            Future work is to provide direct access to a RequestContext for a given message via generated code.
+            </summary>
+        </member>
+        <member name="T:Azure.Storage.Shared.WindowStream">
+            <summary>
+            Exposes a predetermined slice of a larger stream using the same Stream interface.
+            There should not be access to the base stream while this facade is in use.
+            </summary>
+        </member>
+        <member name="M:Azure.Storage.Shared.WindowStream.ReadByte">
+            <summary>Reads a byte from the stream and advances the position within the stream by one byte, or returns -1 if at the end of the stream.</summary><returns>The unsigned byte cast to an <see langword="Int32" />, or -1 if at the end of the stream.</returns><exception cref="T:System.NotSupportedException">The stream does not support reading.</exception><exception cref="T:System.ObjectDisposedException">Methods were called after the stream was closed.</exception>
+            <remarks>
+            Implementing this method takes advantage of any optimizations in the wrapped stream's implementation.
+            </remarks>
+        </member>
+        <member name="M:Azure.Storage.Shared.StreamExtensions.GetPositionOrDefault(System.IO.Stream)">
+            <summary>
+            Some streams will throw if you try to access their length so we wrap
+            the check in a TryGet helper.
+            </summary>
+        </member>
+        <member name="M:Azure.Storage.Shared.StorageWriteStream.FinalizeAndReplaceBufferChecksum(Azure.Storage.UploadTransferValidationOptions@)">
+            <summary>
+            <para>
+            Take the checksum of the currnet buffer and reset the tracked checksum calculation.
+            </para>
+            <para>
+            Note: Avoid using in subclasses. This is only exposed for page blobs, as they override
+            <see cref="M:Azure.Storage.Shared.StorageWriteStream.WriteInternal(System.Byte[],System.Int32,System.Int32,System.Boolean,System.Threading.CancellationToken)" /> for pageblob 512
+            requirements. Since WriteInternal is what calls
+            <see cref="M:Azure.Storage.Shared.StorageWriteStream.AppendInternal(Azure.Storage.UploadTransferValidationOptions,System.Boolean,System.Threading.CancellationToken)" />
+            with appropriate validation options, it needs access to this. However, it's not clear
+            whether page blob needs direct access to calling AppendInternal or whether it can call
+            into its base implementation instead. If it can do this, that is preferred and this can
+            be made private.
+            </para>
+            </summary>
+            <returns>Disposable for the rented memory hosting the checksum.</returns>
+        </member>
+        <member name="T:Azure.Storage.Shared.ISupportsTenantIdChallenges">
+            <summary>
+            Options to be exposed in client options classes related to bearer token authorization challenge scenarios.
+            </summary>
+        </member>
+        <member name="P:Azure.Storage.Shared.ISupportsTenantIdChallenges.EnableTenantDiscovery">
+            <summary>
+             Enables tenant discovery through the authorization challenge when the client is configured to use a TokenCredential.
+            When enabled, the client will attempt an initial un-authorized request to prompt a challenge in order to discover the correct tenant for the resource.
+            </summary>
+        </member>
         <member name="M:Azure.Storage.Cryptography.ClientSideDecryptor.DecryptReadInternal(System.IO.Stream,Azure.Storage.Cryptography.Models.EncryptionData,System.Boolean,System.Boolean,System.Boolean,System.Threading.CancellationToken)">
             <summary>
             Decrypts the given stream if decryption information is provided.
@@ -25642,158 +25888,6 @@
         <member name="T:Azure.Storage.HashAlgorithmHasher">
             <summary>
             HashAlgorithm wrapper for IHasher interface
-            </summary>
-        </member>
-        <member name="T:Azure.Storage.Shared.PooledMemoryStream">
-            <summary>
-            Functions like a readable <see cref="T:System.IO.MemoryStream" /> but uses an ArrayPool to supply the backing memory.
-            This stream support buffering long sizes.
-            </summary>
-        </member>
-        <member name="P:Azure.Storage.Shared.PooledMemoryStream.MaxArraySize">
-            <summary>
-            Size to rent from MemoryPool.
-            </summary>
-        </member>
-        <member name="P:Azure.Storage.Shared.PooledMemoryStream.ArrayPool">
-            <summary>
-            The backing array pool.
-            </summary>
-        </member>
-        <member name="M:Azure.Storage.Shared.PooledMemoryStream.#ctor">
-            <summary>
-            Parameterless constructor for mocking.
-            </summary>
-        </member>
-        <member name="M:Azure.Storage.Shared.PooledMemoryStream.BufferStreamPartitionInternal(System.IO.Stream,System.Int64,System.Int64,System.Buffers.ArrayPool{System.Byte},System.Nullable{System.Int32},System.Boolean,System.Threading.CancellationToken)">
-            <summary>
-            Buffers a portion of the given stream, starting at its current position,
-            returning the buffered stream partition. The provided stream position will
-            be incremented by the amount of bytes buffered.
-            </summary>
-            <param name="stream">
-            Stream to buffer from.
-            </param>
-            <param name="minCount">
-            Minimum number of bytes to buffer. This method will not return until at
-            least this many bytes have been read from <paramref name="stream" /> or the
-            stream completes.
-            </param>
-            <param name="maxCount">
-            Maximum number of bytes to buffer.
-            </param>
-            <param name="arrayPool">
-            Pool to rent buffer space from.
-            </param>
-            <param name="maxArrayPoolRentalSize">
-            Max size we can request from the array pool.
-            </param>
-            <param name="async">
-            Whether to perform this operation asynchronously.
-            </param>
-            <param name="cancellationToken">
-            Cancellation token.
-            </param>
-            <returns>
-            The buffered stream partition with memory backed by an array pool.
-            </returns>
-        </member>
-        <member name="T:Azure.Storage.Shared.StorageClientConfiguration">
-            <summary>
-            Parent class of the *ClientConfiguration classes.
-            Contains common properties used to create clients.
-            </summary>
-        </member>
-        <member name="M:Azure.Storage.Shared.StorageClientConfiguration.#ctor(Azure.Core.Pipeline.HttpPipeline,Azure.Storage.StorageSharedKeyCredential,Azure.Core.Pipeline.ClientDiagnostics)">
-            <summary>
-            Create a <see cref="T:Azure.Storage.Shared.StorageClientConfiguration" /> with shared key authentication.
-            </summary>
-        </member>
-        <member name="M:Azure.Storage.Shared.StorageClientConfiguration.#ctor(Azure.Core.Pipeline.HttpPipeline,Azure.AzureSasCredential,Azure.Core.Pipeline.ClientDiagnostics)">
-            <summary>
-            Create a <see cref="T:Azure.Storage.Shared.StorageClientConfiguration" /> with SAS authentication.
-            </summary>
-        </member>
-        <member name="M:Azure.Storage.Shared.StorageClientConfiguration.#ctor(Azure.Core.Pipeline.HttpPipeline,Azure.Core.TokenCredential,Azure.Core.Pipeline.ClientDiagnostics)">
-            <summary>
-            Create a <see cref="T:Azure.Storage.Shared.StorageClientConfiguration" /> with token authentication.
-            </summary>
-        </member>
-        <member name="M:Azure.Storage.Shared.StorageClientConfiguration.#ctor(Azure.Core.Pipeline.HttpPipeline,Azure.Storage.StorageSharedKeyCredential,Azure.AzureSasCredential,Azure.Core.TokenCredential,Azure.Core.Pipeline.ClientDiagnostics)">
-            <summary>
-            Only use for creating a deep copy of a <see cref="T:Azure.Storage.Shared.StorageClientConfiguration" />.
-            </summary>
-        </member>
-        <member name="M:Azure.Storage.Shared.StorageClientConfiguration.#ctor(Azure.Core.Pipeline.HttpPipeline,Azure.Core.Pipeline.ClientDiagnostics)">
-            <summary>
-            Create a <see cref="T:Azure.Storage.Shared.StorageClientConfiguration" /> without authentication,
-            or with SAS that was provided as part of the URL.
-            </summary>
-        </member>
-        <member name="M:Azure.Storage.Shared.StorageClientConfiguration.#ctor">
-            <summary>
-            Constructor for mocking.
-            </summary>
-        </member>
-        <member name="M:Azure.Storage.Shared.StorageExtensions.EscapePath(System.String,System.Boolean)">
-            <param name="path">Path to operate on.</param>
-            <param name="trimOuterSlashes">Whether to perform backwards-compatible trimming.</param>
-        </member>
-        <member name="M:Azure.Storage.Shared.StorageExtensions.UnescapePath(System.String,System.Boolean)">
-            <param name="path">Path to operate on.</param>
-            <param name="trimOuterSlashes">Whether to perform backwards-compatible trimming.</param>
-        </member>
-        <member name="M:Azure.Storage.Shared.StorageExtensions.CreateClientSideEncryptionScope(Azure.Storage.ClientSideEncryptionVersion)">
-            <summary>
-            Temporary use of pipeline scopes for triggering use of AzFeatures flag.
-            Future work is to provide direct access to a RequestContext for a given message via generated code.
-            </summary>
-        </member>
-        <member name="T:Azure.Storage.Shared.WindowStream">
-            <summary>
-            Exposes a predetermined slice of a larger stream using the same Stream interface.
-            There should not be access to the base stream while this facade is in use.
-            </summary>
-        </member>
-        <member name="M:Azure.Storage.Shared.WindowStream.ReadByte">
-            <summary>Reads a byte from the stream and advances the position within the stream by one byte, or returns -1 if at the end of the stream.</summary><returns>The unsigned byte cast to an <see langword="Int32" />, or -1 if at the end of the stream.</returns><exception cref="T:System.NotSupportedException">The stream does not support reading.</exception><exception cref="T:System.ObjectDisposedException">Methods were called after the stream was closed.</exception>
-            <remarks>
-            Implementing this method takes advantage of any optimizations in the wrapped stream's implementation.
-            </remarks>
-        </member>
-        <member name="M:Azure.Storage.Shared.StreamExtensions.GetPositionOrDefault(System.IO.Stream)">
-            <summary>
-            Some streams will throw if you try to access their length so we wrap
-            the check in a TryGet helper.
-            </summary>
-        </member>
-        <member name="M:Azure.Storage.Shared.StorageWriteStream.FinalizeAndReplaceBufferChecksum(Azure.Storage.UploadTransferValidationOptions@)">
-            <summary>
-            <para>
-            Take the checksum of the currnet buffer and reset the tracked checksum calculation.
-            </para>
-            <para>
-            Note: Avoid using in subclasses. This is only exposed for page blobs, as they override
-            <see cref="M:Azure.Storage.Shared.StorageWriteStream.WriteInternal(System.Byte[],System.Int32,System.Int32,System.Boolean,System.Threading.CancellationToken)" /> for pageblob 512
-            requirements. Since WriteInternal is what calls
-            <see cref="M:Azure.Storage.Shared.StorageWriteStream.AppendInternal(Azure.Storage.UploadTransferValidationOptions,System.Boolean,System.Threading.CancellationToken)" />
-            with appropriate validation options, it needs access to this. However, it's not clear
-            whether page blob needs direct access to calling AppendInternal or whether it can call
-            into its base implementation instead. If it can do this, that is preferred and this can
-            be made private.
-            </para>
-            </summary>
-            <returns>Disposable for the rented memory hosting the checksum.</returns>
-        </member>
-        <member name="T:Azure.Storage.Shared.ISupportsTenantIdChallenges">
-            <summary>
-            Options to be exposed in client options classes related to bearer token authorization challenge scenarios.
-            </summary>
-        </member>
-        <member name="P:Azure.Storage.Shared.ISupportsTenantIdChallenges.EnableTenantDiscovery">
-            <summary>
-             Enables tenant discovery through the authorization challenge when the client is configured to use a TokenCredential.
-            When enabled, the client will attempt an initial un-authorized request to prompt a challenge in order to discover the correct tenant for the resource.
             </summary>
         </member>
         <member name="T:Azure.Storage.IHasher">

@@ -1,6 +1,18 @@
-﻿@model IEnumerable<dynamic>
+﻿@model IEnumerable<EventEaseDB.Models.Booking>
+
 @{
     ViewBag.Title = "Booking List";
+}
+
+
+<h2>Booking List</h2>
+
+<!---the search button-->@using (Html.BeginForm("Index", "Booking", FormMethod.Get))
+{
+    <div class="form-inline mb-3">
+        <input type="text" name="searchString" value="@Request.QueryString["searchString"]" class="form-control mr-2" placeholder="Search by venue or event name..." />
+        <input type="submit" value="Search" class="btn btn-primary" />
+    </div>
 }
 
 @if (TempData["SuccessMessage"] != null)
@@ -11,16 +23,6 @@
 @if (TempData["ErrorMessage"] != null)
 {
     <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
-}
-
-<h2>Booking List</h2>
-
-<!---the search button-->@using (Html.BeginForm("Index", "Booking", FormMethod.Get))
-{
-    <div class="form-inline mb-3">
-        <input type="text" name="searchString" value="@Request.QueryString["searchString"]" class="form-control mr-2" placeholder="Search by venue or event name..." />
-        <input type="submit" value="Search" class="btn btn-primary" />
-    </div>
 }
 <p>
     @Html.ActionLink("Create New", "Create")

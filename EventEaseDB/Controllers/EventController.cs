@@ -6,26 +6,25 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Configuration;
 using EventEaseDB.Models;
 using System.Data.Entity;
 using System.Threading.Tasks;
+using System.Data.Entity.SqlServer;
 
 
 namespace EventEaseDB.Controllers
 {
     public class EventController : Controller
     {
+        private readonly BlobStorageHelper _blobHelper;
+
         private EventEaseDBConsole db = new EventEaseDBConsole();
-
-        // GET: Event
-        /*
-        public ActionResult Index()
+        public EventController()
         {
-//return View(db.Events.ToList());
-            var events = db.Events.Include(e => e.Venue).ToList();
-            return View(events);
-
-        }*/
+            var connString = ConfigurationManager.AppSettings["AzureBlobStorageConnectionString"];
+            _blobHelper = new BlobStorageHelper(connString);
+        }
         public ActionResult Index(string searchType, int? venueId, DateTime? startDate, DateTime? endDate)
         {
             var events = db.Events
@@ -35,22 +34,27 @@ namespace EventEaseDB.Controllers
 
             if (!string.IsNullOrEmpty(searchType))
             {
-                events = events.Where(e => e.EventType.Name == searchType);
+                events = events.Where(e => e.EventType.Name.Equals(searchType, StringComparison.OrdinalIgnoreCase));
             }
 
             if (venueId.HasValue)
             {
                 events = events.Where(e => e.VenueID == venueId);
             }
-
-            if (startDate.HasValue && endDate.HasValue)
+            if (startDate.HasValue)
             {
-                events = events.Where(e => e.Date >= startDate && e.Date <= endDate);
+                var start = startDate.Value.Date;
+                events = events.Where(e => DbFunctions.TruncateTime(e.Date) >= start);
             }
 
-            // Provide dropdown data for filtering
-            ViewData["EventTypes"] = db.EventTypes.ToList();
-            ViewData["Venues"] = db.Venues.ToList();
+            if (endDate.HasValue)
+            {
+                var end = endDate.Value.Date;
+                events = events.Where(e => DbFunctions.TruncateTime(e.Date) <= end);
+            }
+
+            ViewBag.EventTypes = new SelectList(db.EventTypes, "Name", "Name", searchType);
+            ViewBag.Venues = new SelectList(db.Venues, "VenueID", "VenueName", venueId);
 
             return View(events.ToList());
         }
@@ -74,8 +78,8 @@ namespace EventEaseDB.Controllers
         // GET: Event/Create
         public ActionResult Create()
         {
-            ViewBag.VenueID = new SelectList(db.Venues, "VenueID", "VenueName");
-            ViewBag.EventTypeID = new SelectList(db.EventTypes, "EventTypeID", "Name"); // or "Name"
+            ViewBag.VenueID = new SelectList(db.Venues.ToList(), "VenueID", "VenueName");
+            ViewBag.EventTypeID = new SelectList(db.EventTypes.ToList(), "EventTypeID", "Name"); // or "Name"
             return View();
         }
 
@@ -84,17 +88,22 @@ namespace EventEaseDB.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EventID,EventName,VenueID,Date,Description,ImageURL")] Event @event)
+        public ActionResult Create([Bind(Include = "EventID,EventName,VenueID,Date,Description,EventTypeID")] Event @event)
         {
             if (ModelState.IsValid)
             {
                 db.Events.Add(@event);
                 db.SaveChanges();
+                TempData["SuccessMessage"] = "Event created successfully.";
                 return RedirectToAction("Index");
             }
 
+            ViewBag.VenueID = new SelectList(db.Venues, "VenueID", "VenueName", @event.VenueID);
+            ViewBag.EventTypeID = new SelectList(db.EventTypes, "EventTypeID", "Name", @event.EventTypeID);
             return View(@event);
         }
+
+
         // GET: Event/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -109,37 +118,13 @@ namespace EventEaseDB.Controllers
                 return HttpNotFound();
             }
             ViewBag.VenueID = new SelectList(db.Venues, "VenueID", "VenueName", @event.VenueID);
-            ViewBag.EventTypeID = new SelectList(db.EventTypes, "EventTypeID", "EventTypeName", @event.EventTypeID);
+            ViewBag.EventTypeID = new SelectList(db.EventTypes, "EventTypeID", "Name", @event.EventTypeID);
 
-            /*
-            // Load venue dropdown
-            ViewBag.Venues = new SelectList(db.Venues.ToList(), "VenueID", "VenueName", @event.VenueID);
-
-            // Load event type dropdown
-            ViewBag.EventTypes = new SelectList(db.EventTypes.ToList(), "EventTypeID", "TypeName", @event.EventTypeID);
-            */
             return View(@event);
         }
-     
-        /*
-        // POST: Events/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Event @event)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(@event).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(@event);
-        }*/
-
-        // POST: Event/Edit/5
-[HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EventID,EventName,VenueID,Date,Description,ImageURL,EventTypeID")] Event @event)
+        public ActionResult Edit([Bind(Include = "EventID,EventName,VenueID,Date,Description,EventTypeID")] Event @event)
         {
             if (ModelState.IsValid)
             {
@@ -149,12 +134,11 @@ namespace EventEaseDB.Controllers
                 return RedirectToAction("Index");
             }
 
-            // If model state is invalid, reload dropdowns
-            ViewBag.Venues = new SelectList(db.Venues.ToList(), "VenueID", "VenueName", @event.VenueID);
-            ViewBag.EventTypes = new SelectList(db.EventTypes.ToList(), "EventTypeID", "TypeName", @event.EventTypeID);
-
+            ViewBag.VenueID = new SelectList(db.Venues, "VenueID", "VenueName", @event.VenueID);
+            ViewBag.EventTypeID = new SelectList(db.EventTypes, "EventTypeID", "Name", @event.EventTypeID);
             return View(@event);
         }
+
 
 
         // GET: Event/Delete/5
@@ -171,43 +155,12 @@ namespace EventEaseDB.Controllers
             }
             return View(@event);
         }
-        /*
-        // POST: Event/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            // Find the event by id
-            Event eventToDelete = db.Events.Find(id);
-
-            if (eventToDelete == null)
-            {
-                return HttpNotFound();
-            }
-
-            // Check if there are any bookings for the event
-            var isBooked = db.Booking.Any(b => b.EventID == id);
-
-            if (isBooked)
-            {
-                TempData["ErrorMessage"] = "Cannot delete event because it has existing bookings.";
-                return RedirectToAction("Index");
-            }
-
-            // Remove the event from the database
-            db.Events.Remove(eventToDelete);
-            db.SaveChanges();
-
-            TempData["SuccessMessage"] = "Event deleted successfully.";
-            return RedirectToAction("Index");
-        }
-        */
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            var ev = db.Events.Find(id);
+            var @event = db.Events.Find(id);
             bool hasBookings = db.Booking.Any(b => b.EventID == id);
 
             if (hasBookings)
@@ -215,11 +168,11 @@ namespace EventEaseDB.Controllers
                 TempData["ErrorMessage"] = "Cannot delete this event because it is associated with existing bookings.";
                 return RedirectToAction("Index");
             }
-
-            db.Events.Remove(ev);
+            db.Events.Remove(@event);
             db.SaveChanges();
-            TempData["SuccessMessage"] = "Event deleted successfully.";
+            TempData["SuccessMessage"] = "Event successfully deleted.";
             return RedirectToAction("Index");
+
         }
         protected override void Dispose(bool disposing)
         {

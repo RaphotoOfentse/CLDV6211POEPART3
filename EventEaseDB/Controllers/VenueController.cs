@@ -87,7 +87,8 @@ namespace EventEaseDB.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Venue venue = db.Venues.Find(id);
+            var venue = db.Venues.Find(id);
+
             if (venue == null)
             {
                 return HttpNotFound();
@@ -100,30 +101,42 @@ namespace EventEaseDB.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        
         public ActionResult Edit(Venue venue, HttpPostedFileBase ImageFile)
         {
             if (ModelState.IsValid)
             {
+                // 🔍 Get the current venue from the DB (no tracking to avoid state issues)
+                var existingVenue = db.Venues.AsNoTracking().FirstOrDefault(v => v.VenueID == venue.VenueID);
+
+                if (existingVenue == null)
+                {
+                    return HttpNotFound();
+                }
+
                 if (ImageFile != null && ImageFile.ContentLength > 0)
                 {
-                    // Upload new image and set ImageURL
-                    venue.ImageURL = UploadImageToBlob(ImageFile);
+                    // 📷 Save new image
+                    string fileName = Path.GetFileName(ImageFile.FileName);
+                    string path = Path.Combine(Server.MapPath("~/Images"), fileName);
+                    ImageFile.SaveAs(path);
+
+                    venue.ImageURL = "/Images/" + fileName;
                 }
                 else
                 {
-                    // Retain the old image if no new image was uploaded
-                    db.Entry(venue).Property(x => x.ImageURL).IsModified = false;
+                    // 🔁 Keep existing image if no new file is uploaded
+                    venue.ImageURL = existingVenue.ImageURL;
                 }
 
                 db.Entry(venue).State = EntityState.Modified;
                 db.SaveChanges();
+                TempData["SuccessMessage"] = "Venue updated successfully.";
                 return RedirectToAction("Index");
             }
 
             return View(venue);
         }
-        
+
         // GET: Venue/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -161,19 +174,22 @@ namespace EventEaseDB.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             var venue = db.Venues.Find(id);
-            bool hasBookings = db.Booking.Any(b => b.VenueID == id);
 
-            if (hasBookings)
+            try
             {
-                TempData["ErrorMessage"] = "Cannot delete this venue because it is associated with existing bookings.";
-                return RedirectToAction("Index");
+                db.Venues.Remove(venue);
+                db.SaveChanges();
+                TempData["SuccessMessage"] = "Venue deleted successfully.";
             }
-
-            db.Venues.Remove(venue);
-            db.SaveChanges();
-            TempData["SuccessMessage"] = "Venue deleted successfully.";
+            catch (DbUpdateException ex)
+            {
+                // This exception likely means FK constraint failed (venue has bookings)
+                TempData["ErrorMessage"] = "Cannot delete this venue because there are existing bookings linked to it.";
+                // Optionally, log the exception 'ex' for diagnostics
+            }
             return RedirectToAction("Index");
         }
+
 
 
         // Uploads an image to Azure Blob Storage and returns the Blob URL

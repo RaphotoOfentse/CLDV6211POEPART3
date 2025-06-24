@@ -15,6 +15,9 @@ namespace EventEaseDB.Models
         public virtual DbSet<Venue> Venues { get; set; }
         public virtual DbSet<Event> Events { get; set; }
         public virtual DbSet<Booking> Booking { get; set; }
+        public virtual DbSet<BookingSummaryView> BookingSummaryViews { get; set; }
+
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
         }
